@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+         <h1>User List</h1>
+         <button><a href="/add">Add User</a></button>
+         <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Edit Status</th>
+                <th>Delete Status</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id}}</td>
+                <td>{{ user.name}}</td>
+                <td>{{ user.email}}</td>
+                <td><a href="/update/{{user.id}}">Edit</a></td>
+                <td><a href="/delete/{{user.id}}">Delete</a></td>
+            </tr> 
+            {% endfor %}
+         </table>        
+    </body>
+</html>
